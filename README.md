@@ -1,5 +1,7 @@
-# pyxserver
-A simple to use API for integration between pyxel games and servers.  
+# pyxel-server
+A simple to use API for integration between pyxel games and servers. 
+
+![Pyxel](https://github.com/kitao/pyxel)
 ![Preview](https://github.com/FloppiDisk/pyxserver/blob/main/preview.gif?raw=true)
 
 

@@ -1,5 +1,5 @@
 import pyxel
-import pyxel_server
+from pyxel_server import pyxel_server
 from threading import Thread
 
 class App:

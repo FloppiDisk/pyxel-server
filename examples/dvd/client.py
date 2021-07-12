@@ -22,7 +22,7 @@ class App:
         #Variable to make sure pyxel won't draw until update is finished
         self.finishUpdate = False
         #Loads DVD asset
-        pyxel.load("assets/dvd.pyxres")
+        pyxel.load("dvd.pyxres")
         #Runs application
         pyxel.run(self.update, self.draw)
 

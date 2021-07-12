@@ -65,7 +65,7 @@ When you press space in the client, it will get the server's text variable and t
 * `update()`  
   1. Sets server variable `text` to the current `frame_count`.  
 # Reference
-Note: `pyxel-server`'s intended features are not fully implemented yet.
+Note: `pyxel_server`'s intended features are not fully implemented yet.
 ## Server
 * `server(Host, Port, AppWidth, AppHeight, AppFPS, UpdateScript, [WebScript], [InitScript], [Variables])`  
 Initializes the server and runs it.  

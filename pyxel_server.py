@@ -75,8 +75,11 @@ class client:
         self.height = app["height"]
         self.fps = app["fps"]
     
-    def var(self, Variable):
-        data = request_post(self.server + "/var", json={"name": str(Variable)}).json()
+    def var(self, Variable, **Options):
+        if Options.get("Value") == None:
+            data = request_post(self.server + "/var", json={"name": str(Variable)}).json()
+        else:
+            data = request_post(self.server + "/var", json={"name": str(Variable), "data": Options.get("Value")}).json()
         if not data.get(str(Variable)) == None:
             return data[str(Variable)]
         else:

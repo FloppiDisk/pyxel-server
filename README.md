@@ -38,7 +38,7 @@ variables = {
     "text": "Server Text"
 }
 
-pyxel_server.server("127.0.0.1", "5000", 256, 144, 24, update, Variables=variables)
+pyxel_server.server("127.0.0.1", "5000", 256, 144, 24, update, variables=variables)
 ```
 ## What will happen
 When you press space in the client, it will get the server's text variable and the text on the screen will change to the server's `frame_count`.  

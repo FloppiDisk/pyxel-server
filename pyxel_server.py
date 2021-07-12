@@ -4,8 +4,6 @@ from requests import post as request_post
 from flask import Flask, request
 from threading import Thread
 from time import sleep
-from pyxel import run as pyxel_run
-from pyxel import init as pyxel_init
 
 class server:
     running = True

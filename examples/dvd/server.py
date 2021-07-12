@@ -1,4 +1,4 @@
-import pyxserver
+import pyxel_server
 
 def init(self):
 #Custom initialization script
@@ -53,4 +53,4 @@ variables = {
     "dvd-height": 14
 }
 
-pyxserver.server(Host="127.0.0.1", Port="5000", AppWidth=256, AppHeight=144, AppFPS=24, UpdateScript=update, WebScript=web, InitScript=init, variables=variables)
+pyxel_server.server(Host="127.0.0.1", Port="5000", AppWidth=256, AppHeight=144, AppFPS=24, UpdateScript=update, WebScript=web, InitScript=init, variables=variables)

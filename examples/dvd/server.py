@@ -1,4 +1,4 @@
-import pyxel_server
+from pyxel_server import pyxel_server
 
 def init(self):
 #Custom initialization script

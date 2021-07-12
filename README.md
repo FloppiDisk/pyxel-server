@@ -1,7 +1,6 @@
 # pyxel-server
-A simple to use API for integration between pyxel games and servers. 
+A simple to use API for integration between [Pyxel](https://github.com/kitao/pyxel) games and servers. 
 
-[Pyxel](https://github.com/kitao/pyxel)
 ![Preview](https://github.com/FloppiDisk/pyxserver/blob/main/preview.gif?raw=true)
 
 
@@ -23,7 +22,20 @@ Initializes the server and runs it.
   Note: The function must have the parameter `self`.  
 `Variables`: A dictionary of variables needed. e.g. `Variables={"Name": "Value"}`  
 ## Client
-* `client(Host, Port)`
+* `client(Host, Port)`  
+Initializes the client with necessary information.  
 `Host`: The ip or domain of the server. e.g. `Host="127.0.0.1"`  
 `Port`: The port to be opened in the `Host`. e.g. `Port="5000"`  
-## Client
+  Note: You must run this command before anything that needs to use the `client` class.  
+* `var(Variable, [Value])`  
+Returns & optionaly changes a variable from the server.
+`Variable`: The variable name e.g. `Variable="Name"`
+`Value`: The value of variable e.g. `Value="Value"`
+  Note: The variable will be changed before it returns.
+* `post(Route, json)`
+Posts data to a specified route and returns json back.
+`Route`: The path to post e.g. `Route="/var"`
+`json`: The json to post to the `Route` e.g. `json={"Name": "Value"}`
+* `get(Route)`
+Gets data from a specified route
+`Route`: The path to post e.g. `Route="/var"`

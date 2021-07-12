@@ -3,6 +3,7 @@ A simple to use API for integration between your [Pyxel](https://github.com/kita
 
 ![Preview](https://github.com/FloppiDisk/pyxserver/blob/main/preview.gif?raw=true)
 
+[Pypi](https://pypi.org/project/pyxel-server/)
 ```
 pip install pyxel-server
 ```

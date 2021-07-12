@@ -115,6 +115,6 @@ Posts data to a specified route and returns json back.
 Gets data from a specified route  
 `Route`: The path to post e.g. `Route="/var"`  
 # Used software
-[pyxel](https://github.com/kitao/pyxel)
-[flask](https://flask.palletsprojects.com)
-[requests](https://docs.python-requests.org)
+[pyxel](https://github.com/kitao/pyxel)  
+[flask](https://flask.palletsprojects.com)  
+[requests](https://docs.python-requests.org)  

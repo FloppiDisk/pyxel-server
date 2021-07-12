@@ -11,7 +11,7 @@ pip install pyxel-server
 ## Code
 ### client.py
 ```python
-import pyxel_server
+from pyxel_server import pyxel_server
 import pyxel
 
 class App:
@@ -33,7 +33,7 @@ App()
 ```
 ### server.py
 ```python
-import pyxel_server
+from pyxel_server import pyxel_server
 
 def update(self):
   self.variables["text"] = str(self.frame_count)

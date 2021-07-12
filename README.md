@@ -1,4 +1,4 @@
-# pyxel-server
+# pyxel_server
 A simple to use API for integration between your [Pyxel](https://github.com/kitao/pyxel) games with servers. 
 
 ![Preview](https://github.com/FloppiDisk/pyxserver/blob/main/preview.gif?raw=true)
@@ -7,12 +7,12 @@ A simple to use API for integration between your [Pyxel](https://github.com/kita
 ## Code
 ### client.py
 ```python
-import pyxel-server
+import pyxel_server
 import pyxel
 
 class App:
     def __init__(self):
-        self.client = pyxel-server.client("127.0.0.1", "5000")
+        self.client = pyxel_server.client("127.0.0.1", "5000")
         pyxel.init(self.client.width, self.client.height, fps=self.client.fps)
         self.text = "Client text"
         pyxel.run(self.update, self.draw)
@@ -29,7 +29,7 @@ App()
 ```
 ### server.py
 ```python
-import pyxel-server
+import pyxel_server
 
 def update(self):
   self.variables["text"] = str(self.frame_count)
@@ -38,7 +38,7 @@ variables = {
     "text": "Server Text"
 }
 
-pyxel-server.server("127.0.0.1", "5000", 256, 144, 24, update, Variables=variables)
+pyxel_server.server("127.0.0.1", "5000", 256, 144, 24, update, Variables=variables)
 ```
 ## What will happen
 When you press space in the client, it will get the server's text variable and the text on the screen will change to the server's `frame_count`.  

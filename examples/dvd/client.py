@@ -1,11 +1,11 @@
 import pyxel
-import pyxserver
+import pyxel_server
 from threading import Thread
 
 class App:
     def __init__(self):
         #Configure host & port
-        self.client = pyxserver.client(Host="127.0.0.1", Port="5000")
+        self.client = pyxel_server.client(Host="127.0.0.1", Port="5000")
         #Same as pyxel.init() but will sync to server's client defaults
         pyxel.init(width=self.client.width, height=self.client.height, fps=self.client.fps, caption="NO DISC")
         #Get json from route
@@ -39,7 +39,7 @@ class App:
         #Disables draw function
         self.finishUpdate = False
         #If 0.5 second is passed
-        if pyxel.frame_count % pyxel.DEFAULT_FPS / 2 == 0:
+        if pyxel.frame_count % round(pyxel.DEFAULT_FPS / 2) == 0:
             #This may take time so it is ran in a seperate thread
             Thread(target = self.sync).start()
         else:

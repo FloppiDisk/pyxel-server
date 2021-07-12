@@ -6,7 +6,7 @@ A simple to use API for integration between pyxel games and servers.
 # Reference
 Note: Reference is not finished yet.
 ## Server
-* `server(Host, Port, AppWidth, AppHeight, AppFPS, UpdateScript, \[WebScript\], \[InitScript]\, \[Variables\])`  
+* `server(Host, Port, AppWidth, AppHeight, AppFPS, UpdateScript, [WebScript], [InitScript], [Variables])`  
 Initializes the server and runs it.  
 `Host`: The ip or domain of the server. e.g. `Host="127.0.0.1"`  
 `Port`: The port to be opened in the `Host`. e.g. `Port="5000"`  

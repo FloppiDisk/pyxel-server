@@ -70,7 +70,7 @@ When you press space in the client, it will get the server's text variable and t
     and server variables with the `variables` dictionary.  
 * `update()`  
   1. Sets server variable `text` to the current `frame_count`. 
-# [Reference](https://floppidisk.github.io/pyxel_server/reference
+# [Reference](https://floppidisk.github.io/pyxel_server/reference)
 # [Contributing](https://floppidisk.github.io/pyxel_server/contribute)
 # Used software
 * [pyxel](https://github.com/kitao/pyxel)  

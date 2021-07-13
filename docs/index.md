@@ -1,5 +1,6 @@
-# [Reference](https://floppidisk.github.io/pyxel_server/reference)
-# [Contributing](https://floppidisk.github.io/pyxel_server/contribute)
+# [pyxel](https://github.com/kitao/pyxel)  
+# [Reference](https://floppidisk.github.io/pyxel_server/reference)  
+# [Contributing](https://floppidisk.github.io/pyxel_server/contribute)  
 # Install
 ```
 pip install pyxel-server

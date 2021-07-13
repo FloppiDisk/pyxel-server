@@ -1,13 +1,13 @@
 # pyxel_server
-A simple to use API for integration between your [Pyxel](https://github.com/kitao/pyxel) games with servers. 
+A simple to use API for integration between your [Pyxel](https://github.com/kitao/pyxel) games with servers. ![Preview](https://github.com/FloppiDisk/pyxserver/blob/main/preview.gif?raw=true)
 
-![Preview](https://github.com/FloppiDisk/pyxserver/blob/main/preview.gif?raw=true)
-
-[Pypi](https://pypi.org/project/pyxel-server/)
 ```
 pip install pyxel-server
+```  
+or
 ```
-
+https://pypi.org/project/pyxel-server/
+```
 # Usage
 ## Code
 ### client.py
@@ -115,6 +115,6 @@ Posts data to a specified route and returns json back.
 Gets data from a specified route  
 `Route`: The path to post e.g. `Route="/var"`  
 # Used software
-[pyxel](https://github.com/kitao/pyxel)  
-[flask](https://flask.palletsprojects.com)  
-[requests](https://docs.python-requests.org)  
+* [pyxel](https://github.com/kitao/pyxel)  
+* [flask](https://flask.palletsprojects.com)  
+* [requests](https://docs.python-requests.org)  

@@ -51,23 +51,23 @@ When you press space in the client, it will get the server's text variable and t
 ## What are they doing
 ### client.py
 Imports necessary modules.  
-   #### `__init__()`  
-   Initializes the client with the server `Host` and `Port` by getting necessary information including the width and height of the client.  
-   Initializes pyxel application with the client's recieved `self.client.width` and `self.client.height`.  
-   Sets local variable called `text` with some text.  
-   Runs pyxel application.  
-   #### `update()`  
-   Checks if the space bar is pressed  
-   If pressed, it will set the local `text` variable to the server's `text` variable  
-   #### `draw()`  
-   Clears screen  
-   Draws text from local `text` variable  
+###  - `__init__()`  
+Initializes the client with the server `Host` and `Port` by getting necessary information including the width and height of the client.  
+Initializes pyxel application with the client's recieved `self.client.width` and `self.client.height`.  
+Sets local variable called `text` with some text.  
+Runs pyxel application.  
+###  - `update()`  
+Checks if the space bar is pressed  
+If pressed, it will set the local `text` variable to the server's `text` variable  
+###  - `draw()`  
+Clears screen  
+Draws text from local `text` variable  
 ### server.py
-Imports necessary modules.  
-   #### `update()`
-   Sets server variable `text` to the current `frame_count`.  
-   Creates a dictionary with needed variables for the server.  
-   Initializes the server to run on `Host` and `Port`, sets default pyxel `AppWidth`, `AppHeight` and `AppFPS`, server `update()` function to run local `update()`, and server variables with the `variables` dictionary. 
+Imports necessary modules.    
+Creates a dictionary with needed variables for the server.  
+Initializes the server to run on `Host` and `Port`, sets default pyxel `AppWidth`, `AppHeight` and `AppFPS`, server `update()` function to run local `update()`, and server variables with the `variables` dictionary. 
+###  - `update()`
+Sets server variable `text` to the current `frame_count`.  
 # Contributing
 ## Issues and Suggestions
 Submit the issue or suggestion using the issue tracker, make sure it has not been repeated.  

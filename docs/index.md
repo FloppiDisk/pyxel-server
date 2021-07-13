@@ -50,23 +50,23 @@ When you press space in the client, it will get the server's text variable and t
 ## What are they doing
 ### client.py
 1. Imports necessary modules.  
-* `__init__()`  
+#### `__init__()`  
   1. Initializes the client with the server `Host` and `Port` by getting necessary information including the width and height of the client.  
   2. Initializes pyxel application with the client's recieved `self.client.width` and `self.client.height`.  
   3. Sets local variable called `text` with some text.  
   4. Runs pyxel application.  
-* `update()`  
+#### `update()`  
   1. Checks if the space bar is pressed  
   2. If pressed, it will set the local `text` variable to the server's `text` variable  
-* `draw()`  
+#### `draw()`  
   1. Clears screen  
   2. Draws text from local `text` variable  
 ### server.py
 1. Imports necessary modules.  
-2. Creates a dictionary with needed variables for the server.  
-3. Initializes the server to run on `Host` and `Port`, sets default pyxel `AppWidth`, `AppHeight` and `AppFPS`, server `update()` function to run local `update()`, and server variables with the `variables` dictionary.  
-* `update()`  
+#### `update()`  
   1. Sets server variable `text` to the current `frame_count`. 
+3. Creates a dictionary with needed variables for the server.  
+4. Initializes the server to run on `Host` and `Port`, sets default pyxel `AppWidth`, `AppHeight` and `AppFPS`, server `update()` function to run local `update()`, and server variables with the `variables` dictionary.  
 # Used software
 * [pyxel](https://github.com/kitao/pyxel)  
 * [flask](https://flask.palletsprojects.com)  

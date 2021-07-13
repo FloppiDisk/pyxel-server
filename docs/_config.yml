@@ -1,1 +1,4 @@
+title: Pyxel Server
+description: A simple to use API for integration between your Pyxel games with servers.
+show_downloads: true
 theme: jekyll-theme-cayman

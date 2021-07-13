@@ -1,4 +1,4 @@
-# [pyxel](https://github.com/kitao/pyxel)  
+# [Pyxel](https://github.com/kitao/pyxel)  
 # [Reference](https://floppidisk.github.io/pyxel_server/reference)  
 # [Contributing](https://floppidisk.github.io/pyxel_server/contribute)  
 # Install

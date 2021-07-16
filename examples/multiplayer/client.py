@@ -9,10 +9,8 @@ class App:
         self.port = input("Server Port: ")
         self.clientPort = input("Client Port: ")
         self.username = input("Choose Username: ")
-        self.moving = False
         self.Updating = False
         self.Requesting = False
-        self.Players = {}
         self.x = 0
         self.y = 0
         self.addX = 0

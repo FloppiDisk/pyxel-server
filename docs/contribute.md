@@ -9,6 +9,7 @@ It should include sample usages, mock-ups and other relevant information.
 Please submit it in a pull request, issues should be listed if it is a fix.  
   Note: All pull requests submitted are licensed under the [MIT License](https://github.com/FloppiDisk/pyxel_server/blob/main/LICENSE)  
 # Used software
+* [python3](https://python.org)
 * [pyxel](https://github.com/kitao/pyxel)  
 * [flask](https://flask.palletsprojects.com)  
-* [requests](https://docs.python-requests.org)  
+* [requests](https://docs.python-requests.org)

@@ -11,65 +11,87 @@ or
 ```
 https://pypi.org/project/pyxel-server/
 ```
-# Usage
+# Example
 ## Code
 ### client.py
 ```python
-from pyxel_server import pyxel_server
 import pyxel
+from pyxel_server import client
 
 class App:
     def __init__(self):
-        self.client = pyxel_server.client("127.0.0.1", "5000")
-        pyxel.init(self.client.width, self.client.height, fps=self.client.fps)
-        self.text = "Client text"
+        self.address = input("Server Address: ")
+        self.port = input("Server Port: ")
+        self.clientPort = input("Client Port: ")
+        self.username = input("Choose Username: ")
+        self.Updating = False
+        self.points = 0
+        # Connects to server and runs pyxel app
+        self.client = client.run(self.address, self.port, False, "127.0.0.1", self.clientPort)
+        self.client.connect(self.username)
+        self.client.appinfo()
+        pyxel.init(self.client.width, self.client.height, caption=self.username, fps=self.client.fps, quit_key=pyxel.KEY_F2)
         pyxel.run(self.update, self.draw)
-
     def update(self):
-        if pyxel.btnr(pyxel.KEY_SPACE):
-            self.text = self.client.var("text")
-
+        self.Updating = True
+        # Custom Quit Key, Force quit is F2
+        if pyxel.btnr(pyxel.KEY_ESCAPE):
+            self.client.disconnect()
+            pyxel.quit()
+        # Checks if button is pressed and sends to server
+        self.client.btnp(pyxel.KEY_SPACE)
+        # Every half second it will get the user's points
+        if pyxel.frame_count % round(pyxel.DEFAULT_FPS / 2) == 0:
+            self.points = self.client.getLocalVar("points")
+        self.Updating = False
     def draw(self):
-        pyxel.cls(0)
-        pyxel.text(10, round(self.client.height / 2), self.text, 7)
-
+        if not self.Updating:
+            # Clear screen
+            pyxel.cls(0)
+            # Draw score
+            pyxel.text(0, 0, str(self.points), 10)
+            # Render all objects
+            self.client.renderAll()
 App()
 ```
 ### server.py
 ```python
-from pyxel_server import pyxel_server
+from pyxel_server import pyxelobj, server
+import pyxel
+import random
 
 def update(self):
-  self.variables["text"] = str(self.frame_count)
-  
-variables = {
-    "text": "Server Text"
+    # If the dot is not activated
+    if not self.variables.activated:
+        # Create a new one and send it
+        self.variables.x = random.randrange(0, 256)
+        self.variables.y = random.randrange(0, 144)
+        obj = pyxelobj.obj(pyxelobj.new("dot", self.variables.x, self.variables.y, 0, 0, [[7]]))
+        self.variables.activated = True
+        self.sendObj(obj)
+    # Loops through every single user
+    for Username, User in self.Users.__getallusers__().items():
+        # If user pressed space
+        if User.input.get(str(pyxel.KEY_SPACE)) and self.variables.visible:
+            # Add 1 point to user
+            User.variables.points += 1
+            # Set the dot to be not activated
+            self.variables.pressed = False
+            User.input[str(pyxel.KEY_SPACE)] = False
+            
+LocalVariables = {
+    "points": 0
 }
-
-pyxel_server.server("127.0.0.1", "5000", 256, 144, 24, update, variables=variables)
+GlobalVariables = {
+    "pressed": False,
+    "x": random.randrange(0, 256),
+    "y": random.randrange(0, 144)
+}
+server.run("127.0.0.1", "5000", 256, 144, 12, update,LocalVariables=LocalVariables, GlobalVariables=GlobalVariables)
 ```
 ## What will happen
-When you press space in the client, it will get the server's text variable and the text on the screen will change to the server's `frame_count`.  
-## What are they doing
-### client.py
-Imports necessary modules.  
-###  - `__init__()`  
-Initializes the client with the server `Host` and `Port` by getting necessary information including the width and height of the client.  
-Initializes pyxel application with the client's recieved `self.client.width` and `self.client.height`.  
-Sets local variable called `text` with some text.  
-Runs pyxel application.  
-###  - `update()`  
-Checks if the space bar is pressed  
-If pressed, it will set the local `text` variable to the server's `text` variable  
-###  - `draw()`  
-Clears screen  
-Draws text from local `text` variable  
-### server.py
-Imports necessary modules.    
-Creates a dictionary with needed variables for the server.  
-Initializes the server to run on `Host` and `Port`, sets default pyxel `AppWidth`, `AppHeight` and `AppFPS`, server `update()` function to run local `update()`, and server variables with the `variables` dictionary. 
-###  - `update()`
-Sets server variable `text` to the current `frame_count`.  
+This is a game of who pressed space first when the dot apears.
+## [More](https://github.com/FloppiDisk/pyxel_server/tree/main/examples)
 # Contributing
 ## Issues and Suggestions
 Submit the issue or suggestion using the issue tracker, make sure it has not been repeated.  

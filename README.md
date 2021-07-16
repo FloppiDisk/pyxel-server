@@ -1,6 +1,8 @@
 # Pyxel Server
 A simple to use API for integration between your [Pyxel](https://github.com/kitao/pyxel) games with servers.  
 ![preview](https://github.com/FloppiDisk/pyxel_server/raw/main/preview.gif?raw=true)
+# Note
+Documentation is not updated yet, please do `pip install pyxel-server==0.0.2` instead if you need to use the documentation
 # Install
 ```
 pip install pyxel-server

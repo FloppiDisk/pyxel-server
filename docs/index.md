@@ -81,7 +81,7 @@ LocalVariables = {
     "points": 0
 }
 GlobalVariables = {
-    "pressed": False,
+    "activated": False,
     "x": random.randrange(0, 256),
     "y": random.randrange(0, 144)
 }
